@@ -11,10 +11,10 @@ class TwitterFetcher
     end
   end
 
-  def top
-    @client.search("to:barackobama thanks", :result_type => "recent").take(3).collect do |tweet|
-      "#{tweet.text}"
-    end
+  def trends(id=1, options={})
+    options[:id] = id
+    response = get("/1.1/trends/place.json", options)
+    collection_from_array(Twitter::Trend, response[:body].first[:trends])
   end
-
+  
 end
