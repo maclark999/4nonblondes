@@ -8,10 +8,8 @@ class NprFetcher
     end
 
   def npr_news(searchterm)
-    @searchterm = searchterm
-
     response = @conn.get do |req|
-      req.url "/query?searchTerm=#{@searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=MDE4NTUyNTU0MDE0MjY2MTEzOTBmMjlkMw001&sort=relevance"
+      req.url "/query?searchTerm=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=MDE4NTUyNTU0MDE0MjY2MTEzOTBmMjlkMw001&sort=relevance"
       req.headers['content-type'] = 'application/json'
     end
     @returnedsearch= JSON.parse(response.body)
@@ -26,6 +24,7 @@ class NprFetcher
       end
 
       {title: child['title']['$text'], url: child['link'][2]['$text'], img: img_val }
+
     end
   end
 

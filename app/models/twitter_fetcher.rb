@@ -11,10 +11,18 @@ class TwitterFetcher
     end
   end
 
-  def trends(id=1, options={})
+  def trends(id=23424977, options={})
     options[:id] = id
     response = get("/1.1/trends/place.json", options)
     collection_from_array(Twitter::Trend, response[:body].first[:trends])
   end
-  
+
+  def human
+    @client.trends.map do |trend|
+      trend[:name].underscore.humanize.gsub("#", "")
+    end
+  end
+
+
+
 end

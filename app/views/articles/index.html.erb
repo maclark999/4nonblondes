@@ -4,8 +4,16 @@
 <h1> Welcome <%= current_user.name %> ! </h1>
 
 <%= link_to 'Logout', signout_path, class: 'btn btn-primary' %>
-<% @fetcher.titles_urls("africa").each do |cat| %>
+<% end %>
+
+<% @tfetcher.human.each do |search| %>
+<% @nprfetcher.titles_urls(search).map do |cat| %>
 <%= cat[:title] %><br>
 <%= cat[:url] %><br>
 <%= cat[:img] %><br>
+<% end %>
+<% end %>
+
+<% @tfetcher.client.trends(23424977).each do |trend| %>
+<%= trend[:name] %><br>
 <% end %>
