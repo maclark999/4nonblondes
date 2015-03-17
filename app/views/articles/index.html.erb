@@ -4,4 +4,8 @@
 <h1> Welcome <%= current_user.name %> ! </h1>
 
 <%= link_to 'Logout', signout_path, class: 'btn btn-primary' %>
+<% @fetcher.titles_urls("africa").each do |cat| %>
+<%= cat[:title] %><br>
+<%= cat[:url] %><br>
+<%= cat[:img] %><br>
 <% end %>
