@@ -1,6 +1,7 @@
 <% unless current_user %>
-<%= link_to 'Login with Twitter', '/auth/twitter' %>
+<%= link_to 'Login with Twitter', '/auth/twitter', class: 'btn btn-primary' %>
 <% else %>
 <h1> Welcome <%= current_user.name %> ! </h1>
-<%= link_to 'Logout', signout_path %>
+
+<%= link_to 'Logout', signout_path, class: 'btn btn-primary' %>
 <% end %>
