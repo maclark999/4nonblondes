@@ -29,7 +29,13 @@ class NprFetcher
       #   title = child['title']['$text']
       # end
 
-      {title: child['title']['$text'], url: child['link'][-1]['$text']}
+      # unless BingFetcher.new.image_search(child['title']['$text']).nil?
+        img = BingFetcher.new.image_search(child['title']['$text'])
+      # end
+
+
+      {title: child['title']['$text'], url: child['link'][0]['$text'],
+        img: img}
     end
   end
   end

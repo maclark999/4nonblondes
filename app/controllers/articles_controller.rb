@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @nprfetcher = NprFetcher.new
   end
 
 end

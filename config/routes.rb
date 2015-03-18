@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :articles
+  # resources :articles
+  get '/articles' => 'articles#index'
+  get '/articles/:tweet' => 'articles#show', as: :article
+
+
+
   root 'sessions#new'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
