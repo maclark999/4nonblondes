@@ -36,5 +36,18 @@ class NprFetcher
   end
 
 
+  def title_url(searchterm)
+    @new = NprFetcher.new
+    @search = @new.npr_news(searchterm)
+    unless @search.nil?
+      unless @search['list']['story'].nil?
+          {title: @search['list']['story'][0]['title']['$text'], url: @search['list']['story'][0]['link'][-1]['$text']}
+        end
+      end
+    end
+
+
+
+
 end
 end
