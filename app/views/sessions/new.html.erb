@@ -1,0 +1,15 @@
+<body>
+</body>
+
+<div class="container">
+
+  <%= image_tag "whats-going-on.png", class:"login-logo", alt:"Whats Going on?!" %>
+    <div class="col-2-12 center">
+      <div class="button">
+      <% unless current_user %>
+      <%= link_to 'Login with Twitter', '/auth/twitter', class: 'btn btn-success hlogo' %>
+      <% end %>
+    </div>
+    </div>
+
+</div>
