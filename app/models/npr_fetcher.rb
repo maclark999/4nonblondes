@@ -9,7 +9,7 @@ class NprFetcher
 
   def npr_news(searchterm)
     response = @conn.get do |req|
-      req.url "/query?searchTerm=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=MDE4NTUyNTU0MDE0MjY2MTEzOTBmMjlkMw001&sort=relevance"
+      req.url "/query?searchTerm=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=#{ENV['NPR_API_KEY']}&sort=relevance"
       req.headers['content-type'] = 'application/json'
     end
     @returnedsearch= JSON.parse(response.body)
@@ -41,12 +41,21 @@ class NprFetcher
     @search = @new.npr_news(searchterm)
     unless @search.nil?
       unless @search['list']['story'].nil?
-          {title: @search['list']['story'][0]['title']['$text'], url: @search['list']['story'][0]['link'][-1]['$text']}
+          {title: @search['list']['story'][0]['title']['$text'],
+            url: @search['list']['story'][0]['link'][-1]['$text'],
+            img: BingFetcher.new.image_search(@search['list']['story'][0]['title']['$text'])
+            }
+
         end
       end
     end
 
+  def npr_image(image)
+    @npr_image = BingFetcher.new
+    @article_image = @image.image_search(image)
 
+    # url: @search['list']['story'][0]['link'][-1]['$text']
+  end
 
 
 end
