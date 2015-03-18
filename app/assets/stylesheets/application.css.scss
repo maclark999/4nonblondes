@@ -2,3 +2,119 @@
 @import "bootswatch/darkly/variables";
 @import "bootstrap";
 @import "bootswatch/darkly/bootswatch";
+
+body {
+  background-image: url(4non-back-blur.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222222;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1508px;
+  padding: 0 8.3% 0 8.3%;
+  max-height: 100%;
+}
+
+.login-logo{
+  margin: 0 auto;
+  display: block;
+  padding: 25% 0 0 0;
+}
+
+.grid {
+  margin: auto 0;
+
+
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+  float: left;
+  // padding-right: 20px;
+  .grid &:last-of-type {
+    // padding-right: 0;
+  }
+}
+
+.col-1-12 {
+  width: 8.3%;
+}
+
+.col-2-12 {
+  width: 16.6%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+.col-4-12 {
+  width: 33.3%;
+}
+
+.col-5-12 {
+  width: 41.6%;
+}
+
+.col-7-12 {
+  width: 58.3%;
+}
+
+.col-8-12 {
+  width: 66.6%;
+}
+
+.clear {
+  float:none;
+}
+
+.f-right {
+  float:right;
+}
+
+.center {
+  margin: 0 auto;
+  position: absolute;
+  padding: 38% 0 25% 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.big-box {
+  padding: 20px;
+  background: #333333;
+  margin: 3px;
+  height: 647px;
+}
+
+.small-box {
+  padding: 20px;
+  background: #333333;
+  margin: 3px;
+  height: 301px;
+}
+
+.button {
+  align: center;
+}
+.btn-success {
+  position:absolute;
+  top: 50%;
+  border-radius: 0px;
+}
+
+.hlogo{
+  margin: 0 auto;
+  display: block;
+}
