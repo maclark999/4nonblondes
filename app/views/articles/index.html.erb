@@ -5,12 +5,26 @@
 <%= link_to 'Login with Twitter', '/auth/twitter', class: 'btn btn-success' %>
 <% else %>
 <h1> Welcome <%= current_user.name %> ! </h1>
-
 <%= link_to 'Logout', signout_path, class: 'btn btn-success' %>
-<% @fetcher.titles_urls("africa").each do |cat| %>
+<% end %>
+
+<% @tfetcher.human.each do |tweet| %>
+
+<% unless @nprfetcher.titles_urls(tweet[:search_term]).nil? %>
+  <%= "This is a TWEET--> #{tweet[:tag]}" %>
+<% @nprfetcher.titles_urls(tweet[:search_term]).map do |cat| %>
+
 <%= cat[:title] %><br>
 <%= cat[:url] %><br>
-<%= cat[:img] %><br>
+<%# unless cat[:img].nil? %>
+<%# image_tag(cat[:img], class: "img-responsive") %><br>
+<%# end %>
+<% end %>
+<% end %>
+<% end %>
+
+<% @tfetcher.client.trends(23424977).each do |trend| %>
+<%= trend[:name] %><br>
 <% end %>
 <% end %>
 </div>

@@ -1,8 +1,11 @@
 class ArticlesController < ApplicationController
+
   def index
-    @fetcher = NprFetcher.new
+    @nprfetcher = NprFetcher.new
+    @tfetcher = TwitterFetcher.new
   end
 
   def show
   end
+
 end
