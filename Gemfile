@@ -38,6 +38,7 @@ gem 'twitter'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'faraday'
+gem 'searchbing'
 
 
 
