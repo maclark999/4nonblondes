@@ -6,11 +6,17 @@
 <%= link_to 'Logout', signout_path, class: 'btn btn-primary' %>
 <% end %>
 
-<% @tfetcher.human.each do |search| %>
-<% @nprfetcher.titles_urls(search).map do |cat| %>
+<% @tfetcher.human.each do |tweet| %>
+
+<% unless @nprfetcher.titles_urls(tweet[:search_term]).nil? %>
+  <%= "This is a TWEET--> #{tweet[:tag]}" %>
+<% @nprfetcher.titles_urls(tweet[:search_term]).map do |cat| %>
 <%= cat[:title] %><br>
 <%= cat[:url] %><br>
-<%= cat[:img] %><br>
+<%# unless cat[:img].nil? %>
+<%# image_tag(cat[:img], class: "img-responsive") %><br>
+<%# end %>
+<% end %>
 <% end %>
 <% end %>
 

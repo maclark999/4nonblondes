@@ -18,8 +18,8 @@ class TwitterFetcher
   end
 
   def human
-    @client.trends.map do |trend|
-      trend[:name].underscore.humanize.gsub("#", "")
+    @client.trends(23424977).map do |trend|
+      {tag: trend[:name], search_term: trend[:name].underscore.humanize.gsub("#", "") }
     end
   end
 
