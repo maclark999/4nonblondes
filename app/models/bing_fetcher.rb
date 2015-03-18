@@ -5,6 +5,6 @@ class BingFetcher
   end
 
   def image_search(image)
-    bing_image.search(image)[0][:Image][0][:Thumbnail][:MediaUrl]
+    @bing_image.search(image)[0][:Image][0][:Thumbnail][:MediaUrl]
   end
 end

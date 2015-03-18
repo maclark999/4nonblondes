@@ -13,15 +13,14 @@
 <%# @tfetcher.human.each do |tweet| %>
 <% @faketweets.each do |tweet| %>
 
-  <% unless @nprfetcher.titles_urls(tweet[:search_term]).nil? %>
+  <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
   <%= "This is a TWEET--> #{tweet[:tag]}" %><br>
   <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
-
   <%= @cat[:title] %><br>
-  <%= @cat[:url] %><br><br>
-  <%# unless cat[:img].nil? %>
-  <%# image_tag(cat[:img], class: "img-responsive") %>
-  <%# end %>
+  <%= @cat[:url] %><br>
+  <% unless @cat[:img].nil? %>
+  <%= image_tag(@cat[:img], class: "img-responsive") %>
+  <% end %>
   <% end %>
   <% end %>
 
