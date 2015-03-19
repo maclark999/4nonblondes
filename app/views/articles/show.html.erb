@@ -8,6 +8,7 @@
 </h1>
 
 
+<<<<<<< HEAD
 <!-- <div class="art-hero">
 
 <div class="grid">
@@ -18,6 +19,17 @@
 
   <!-- </div>  -->
 <!-- </div> -->
+=======
+  <div class="grid">
+  <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
+
+      <% if current_user %>
+      <!-- <h1> Welcome <%= current_user.name %> ! </h1> -->
+      <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
+      <% end %>
+</div>
+</div>
+>>>>>>> ccff6bbedbf4c658953039038eb9a3bb56c8561f
 
 <div class="container">
 
