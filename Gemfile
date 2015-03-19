@@ -36,7 +36,6 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'simple_form'
-gem 'dotenv-rails'
 gem 'faraday'
 gem 'searchbing'
 
@@ -44,6 +43,7 @@ gem 'searchbing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'dotenv-rails'
   gem 'better_errors'
   gem 'pry-byebug'
   gem 'pry-rails'
