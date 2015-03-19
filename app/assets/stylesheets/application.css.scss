@@ -9,7 +9,9 @@ html{
   }
 
 body{
-  background-color: #171616;
+  background-color: #1B1A1A;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
 }
 
 body.b {
@@ -28,9 +30,25 @@ body.b {
   max-height: 100%;
 }
 
+.art-hero {
+  // height: 600px;
+  width: 100%;
+  // margin: 0 0 8.3% 0;
+  padding: 10% 0 5% 0;
+  // height: 40em;
+}
+
+.art-logo{
+  margin: 0 auto;
+  display: block;
+}
+
 h1{
-  font-size: 1.7em;
-  margin: 10% 0 10% 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 0 0 5% 0;
 }
 
 .login-logo{
@@ -40,8 +58,8 @@ h1{
 }
 
 .grid {
-  margin: auto 0;
-
+  margin: 0 auto;
+  padding: 5% 0 5% 0;
 
   &:after {
     /* Or @extend clearfix */
@@ -120,7 +138,7 @@ h1{
 }
 
 .img-box {
-  background: #f1f1f1;
+  background: #000000;
   overflow: hidden;
   opacity: .4;
   // margin: 3px;
@@ -144,6 +162,7 @@ h1{
 .img-sm-adj{
   height: 100%;
   width: auto;
+
 }
 
 .small-box {
@@ -161,10 +180,20 @@ h1{
 .small-box-txt {
   position: absolute;
   bottom: 0;
-  padding: 0 0 0 7%;
+  padding: 5% 7% 7% 7%;
   // margin: 3px;
   height: 35%;
   width: 100%;
+  z-index: 4;
+}
+
+.more-articles {
+  position: absolute;
+  bottom: 0;
+  padding: 7% 7% 2% 0;
+  // margin: 3px;
+  // height: 5%;
+  // width: 100%;
   z-index: 4;
 }
 
@@ -175,23 +204,41 @@ h1{
   width: 48%;
   overflow: hidden;
   z-index: 3;
+  -moz-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  box-shadow:0px 0px 10px rgba(0,0,0,0.5);
 }
 
 .hashtag {
+  font-weight: 300;
   font-size: 1.2em;
   position: absolute;
   z-index: 3;
-  margin: 10% 25% 0 25%;
+  width: 100%;
+  text-align: center;
+  padding: 12% 0 0 0;
+  // margin: 10% 25% 0 25%;
 }
 
 .tbox{
-  height: 20%;
+  height: 25%;
+  width: 90%;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
 }
 
 .more {
   margin: 10% 10% 20% 0;
   color: #00bd8b;
+  position: absolute;
+  bottom: 0;
+}
+
+.title{
+  color: #ffffff;
 }
 
 .button {
@@ -208,3 +255,13 @@ h1{
   margin: 0 auto;
   display: block;
 }
+
+// .ellipsis {
+//   position: absolute;
+//
+// }
+//
+// .end {
+//   position: relative;
+//   float: right;
+// }
