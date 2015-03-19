@@ -32,7 +32,9 @@
           <!-- <p class="tbox">Abunch of text that gets pulled in from cool things that we did as a group. This text will
           disapear here in a minute</p> -->
           <div class="more-articles"
-          <p class="more"><%= link_to "Click for more articles", article_path(tag: tweet[:tag], search_term: tweet[:search_term]) %></p>
+          <p class="more"><%= link_to article_path(tag: tweet[:tag], search_term: tweet[:search_term]) do %>
+             <%= image_tag('eye-con.png', class:"twit-sesh") %> See More Articles
+          <% end %></p>
           </div>
         </div>
 
