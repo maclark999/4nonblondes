@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # resources :articles
   get '/articles' => 'articles#index'
-  get '/articles/:tweet' => 'articles#show', as: :article
+  get '/articles/:tag/:search_term' => 'articles#show', as: :article
 
   resources :tests
   root 'sessions#new'

@@ -37,10 +37,10 @@
 
         <div class="small-box-txt">
           <h1><%= link_to @cat[:title], @cat[:url], class:"title" %></h1>
-          <p class="tbox">Abunch of text that gets pulled in from cool things that we did as a group. This text will
-          disapear here in a minute</p>
+          <!-- <p class="tbox">Abunch of text that gets pulled in from cool things that we did as a group. This text will
+          disapear here in a minute</p> -->
           <div class="more-articles"
-          <p class="more"><%= link_to "Click for more articles", article_path(tweet: tweet) %></p>
+          <p class="more"><%= link_to "Click for more articles", article_path(tag: tweet[:tag], search_term: tweet[:search_term]) %></p>
           </div>
         </div>
 

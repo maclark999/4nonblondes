@@ -38,7 +38,7 @@ gem 'twitter'
 gem 'simple_form'
 gem 'faraday'
 gem 'searchbing'
-
+gem 'rails_12factor'
 
 
 group :development, :test do
