@@ -20,10 +20,16 @@ class NprFetcher
     @search = @new.npr_news(searchterm)
     unless @search.nil?
       unless @search['list']['story'].nil?
-      @search['list']['story'].map do |child|
+      @search['list']['story'][0..9].map do |child|
 
       if child['thumbnail'].present?
-      img_val = child['thumbnail']['large']['$text']
+        img_val = child['thumbnail']['large']['$text']
+      else
+        img_val = BingFetcher.new.image_search(child['title']['$text'])
+      end
+
+      if child["teaser"].present?
+        teaser_val = child["teaser"]["$text"]
       end
       # if child['title'].present?
       #   title = child['title']['$text']
@@ -35,7 +41,7 @@ class NprFetcher
 
 
       {title: child['title']['$text'], url: child['link'][0]['$text'],
-        img: img_val}
+        img: img_val, des: teaser_val}
     end
   end
   end
@@ -50,11 +56,17 @@ class NprFetcher
 
         if @search['list']['story'][0]['thumbnail'].present?
           img_val = @search['list']['story'][0]['thumbnail']['large']['$text']
+        else
+          img_val = BingFetcher.new.image_search(@search['list']['story'][0]['title']['$text'])
+        end
+
+        if @search['list']['story'][0]["teaser"].present?
+          teaser_val = @search['list']['story'][0]["teaser"]["$text"]
         end
 
           {title: @search['list']['story'][0]['title']['$text'],
             url: @search['list']['story'][0]['link'][-1]['$text'],
-            img: img_val
+            img: img_val, des: teaser_val
             }
 
         end
