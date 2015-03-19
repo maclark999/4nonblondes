@@ -9,13 +9,16 @@ class NprFetcher
 
   def npr_news(searchterm)
     response = @conn.get do |req|
-      req.url "/query?searchTerm=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=#{ENV['NPR_API_KEY']}&sort=relevance"
+      # req.url "/query?dateType=story&searchTerm=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=#{ENV['NPR_API_KEY']}&sort=relevance"
+      # req.url "/query?searchinput=#{searchterm}&output=MediaRSS&searchType=fullContent&output=JSON&apiKey=#{ENV['NPR_API_KEY']}&sort=relevance"
+      req.url "/query?searchTerm=#{searchterm}&dateType=story&output=JSON&apiKey=#{ENV['NPR_API_KEY']}&sort=relevance"
       req.headers['content-type'] = 'application/json'
     end
     @returnedsearch= JSON.parse(response.body)
   end
 
   def titles_urls(searchterm)
+    Rails.cache.fetch("reposnprshow/#{searchterm}", expires_in:1.hours) do
     @new = NprFetcher.new
     @search = @new.npr_news(searchterm)
     unless @search.nil?

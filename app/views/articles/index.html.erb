@@ -20,7 +20,7 @@
   <%= @cat[:url] %><br>
   <% unless @cat[:img].nil? %>
   <%= image_tag(@cat[:img], class: "img-responsive") %>
-  <%= link_to "Show Page", article_path(tweet: tweet) %>
+  <%= link_to "Show Page", article_path(tag: tweet[:tag], search_term: tweet[:search_term]) %>
   <% end %>
   <% end %>
   <% end %>

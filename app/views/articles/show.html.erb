@@ -1,6 +1,5 @@
 
-This is a show page
-<% @nprfetcher.titles_urls(params[:search_term]).map do |cat| %>
+<% @nprfetcher.titles_urls(params['search_term']).map do |cat| %>
 <%= cat[:title] %><br>
 <%= cat[:url] %><br>
 <% unless cat[:img].nil? %>
