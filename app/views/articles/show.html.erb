@@ -1,17 +1,23 @@
-<div class="art-hero">
+<h1 class= "header" >
+  <div class = "header-tweet">
+    <%= params['tag'] %><br>
 
-  <!-- <div class="grid">
+    <% if current_user %>
+        <%= link_to 'Logout', signout_path, class: 'btn btn-success', id: "button-show" %>
+    <% end %>
+  </div>
+  </h1>
+
+<!-- <div class="art-hero">
+
+<div class="grid">
   <%# image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
   </div> -->
 
-  <div class="grid">
-  <div class="col-2-12 center">
-      <% if current_user %>
-      <%= link_to 'Logout', signout_path, class: 'btn btn-success' %>
-      <% end %>
-  </div>
-  </div>
-</div>
+  <!-- <div class="grid"> -->
+
+  <!-- </div>  -->
+<!-- </div> -->
 
 <div class="container">
 
