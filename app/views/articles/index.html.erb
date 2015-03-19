@@ -1,3 +1,4 @@
+<div class="container">
 
 <div class = "row">
   <div class="col-lg-1 col-centered">
@@ -12,21 +13,43 @@
 
 <%# @tfetcher.human.each do |tweet| %>
 <% @faketweets.each do |tweet| %>
-
   <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
-  <%= "This is a TWEET--> #{tweet[:tag]}" %><br>
-  <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
-  <%= @cat[:title] %><br>
-  <%= @cat[:url] %><br>
-  <% unless @cat[:img].nil? %>
-  <%= image_tag(@cat[:img], class: "img-responsive") %>
-  <%= link_to "Show Page", article_path(tweet: tweet) %>
-  <% end %>
-  <% end %>
-  <% end %>
+    <div class="col-4-12">
+      <div class="big-box">
 
+        <p class="hashtag"><%= "#{tweet[:tag]}" %></p>
+
+        <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
+
+        <div class="small-img-box">
+          <% unless @cat[:img].nil? %>
+            <%= image_tag(@cat[:img], class: "img-sm-adj") %>
+          <% end %>
+        </div>
+
+        <div class="small-box-txt">
+          <h1><%= @cat[:title] %></h1>
+          <p class="tbox"><%= @cat[:url] %></p>
+          <p class="more"><%= link_to "Click for more articles", article_path(tweet: tweet) %></p>
+        </div>
+
+        <div class="small-box"></div>
+
+        <div class="img-box">
+          <% unless @cat[:img].nil? %>
+            <%= image_tag(@cat[:img], class: "img-adj") %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
   <%# @tfetcher.client.trends(23424977).each do |trend| %>
   <%# trend[:name] %>
   <%# end %>
   <%# end %>
+
+
+</div>

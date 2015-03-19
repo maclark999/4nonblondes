@@ -3,20 +3,34 @@
 @import "bootstrap";
 @import "bootswatch/darkly/bootswatch";
 
-body {
+html{
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+  }
+
+body{
+  background-color: #171616;
+}
+
+body.b {
   background-image: url(4non-back-blur.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #222222;
+  background-color: #171616;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1508px;
-  padding: 0 8.3% 0 8.3%;
+  max-width: 1408px;
+  padding: 0 4% 0 4%;
   max-height: 100%;
+}
+
+h1{
+  font-size: 1.7em;
+  margin: 10% 0 10% 0;
 }
 
 .login-logo{
@@ -92,22 +106,98 @@ body {
 }
 
 .big-box {
-  padding: 20px;
-  background: #333333;
-  margin: 3px;
-  height: 647px;
+  // padding: 20px;
+  position: relative;
+  background: #000000;
+  margin: 2.3%;
+  height: 40em;
+  z-index: 1;
+  bottom: 0;
+  -moz-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+
+}
+
+.img-box {
+  background: #f1f1f1;
+  overflow: hidden;
+  opacity: .4;
+  // margin: 3px;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+.img-adj{
+  height: 40em;
+  width: auto;
+
+  filter: blur(10px);
+  // Browser Specific
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+}
+
+.img-sm-adj{
+  height: 100%;
+  width: auto;
 }
 
 .small-box {
-  padding: 20px;
-  background: #333333;
-  margin: 3px;
-  height: 301px;
+  position: absolute;
+  bottom: 0;
+  padding: 0 0 0 7%;
+  background: #355980;
+  opacity: .6;
+  // margin: 3px;
+  height: 35%;
+  width: 100%;
+  z-index: 3;
+}
+
+.small-box-txt {
+  position: absolute;
+  bottom: 0;
+  padding: 0 0 0 7%;
+  // margin: 3px;
+  height: 35%;
+  width: 100%;
+  z-index: 4;
+}
+
+.small-img-box {
+  position: absolute;
+  margin: 43% 26% 0 26%;
+  height: 28%;
+  width: 48%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.hashtag {
+  font-size: 1.2em;
+  position: absolute;
+  z-index: 3;
+  margin: 10% 25% 0 25%;
+}
+
+.tbox{
+  height: 20%;
+  overflow: hidden;
+}
+
+.more {
+  margin: 10% 10% 20% 0;
+  color: #00bd8b;
 }
 
 .button {
   align: center;
 }
+
 .btn-success {
   position:absolute;
   top: 50%;

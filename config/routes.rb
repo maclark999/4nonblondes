@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   get '/articles' => 'articles#index'
   get '/articles/:tweet' => 'articles#show', as: :article
 
-
-
+  resources :tests
   root 'sessions#new'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'

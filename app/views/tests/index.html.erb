@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="col-4-12">
+    <div class="big-box">
+
+      <!-- <div class="hashtag"> -->
+        <p class="hashtag">#IHopeThisWorks</p>
+      <!-- </div> -->
+
+      <div class="small-img-box">
+        <%= image_tag "orange-cat-90x90.jpg", class:"img-sm-adj" %>
+      </div>
+
+      <div class="small-box-txt">
+        <h1>Sailing with the breeze</h1>
+        <p>Abunch of text that gets pulled in from cool things that we did as a group.</p>
+        <p class="more">click for more articles</p>
+
+      </div>
+
+      <div class="small-box"></div>
+
+      <div class="img-box">
+        <%= image_tag "orange-cat-90x90.jpg", class:"img-adj" %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-4-12">
+    <div class="big-box">
+
+      <!-- <div class="hashtag"> -->
+        <p class="hashtag">#IHopeThisWorks</p>
+      <!-- </div> -->
+
+      <div class="small-img-box">
+        <%= image_tag "4non-back.jpg", class:"img-sm-adj" %>
+      </div>
+
+      <div class="small-box-txt">
+        <h1>Sailing with the breeze</h1>
+        <p class="tbox">Abunch of text that gets pulled in from cool things that we did as a group. This text will
+        disapear here in a minute</p>
+        <p class="more">click for more articles</p>
+
+      </div>
+
+      <div class="small-box"></div>
+
+      <div class="img-box">
+        <%= image_tag "4non-back.jpg", class:"img-adj" %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-4-12">
+    <div class="big-box">
+
+      <!-- <div class="hashtag"> -->
+        <p class="hashtag">#IHopeThisWorks</p>
+      <!-- </div> -->
+
+      <div class="small-img-box">
+        <%= image_tag "walterrock.jpg", class:"img-sm-adj" %>
+      </div>
+
+      <div class="small-box-txt">
+        <h1>Sailing with the breeze</h1>
+        <p class="tbox">Abunch of text that gets pulled in from cool things that we did as a group. This text will
+        disapear here in a minute</p>
+        <p class="more">click for more articles</p>
+
+      </div>
+
+      <div class="small-box"></div>
+
+      <div class="img-box">
+        <%= image_tag "walterrock.jpg", class:"img-adj" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<% @faketweets.each do |tweet| %>
+  <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
+  <div class="col-4-12">
+    <div class="big-box">
+
+      <p class="hashtag"><%= "#{tweet[:tag]}" %></p>
+
+      <div class="small-img-box">
+        <% unless @cat[:img].nil? %>
+          <%= image_tag(@cat[:img], class:"img-sm-adj") %>
+        <% end %>
+        </div>
+
+      <div class="small-box-txt">
+        <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
+        <h1><%= @cat[:title] %></h1>
+        <p class="tbox"><%= @cat[:url] %></p>
+        <p class="more"><%= link_to "Click for more articles", article_path(tweet: tweet) %></p>
+      </div>
+
+      <div class="small-box"></div>
+
+      <div class="img-box">
+        <% unless @cat[:img].nil? %>
+          <%= image_tag(@cat[:img], class:"img-adj") %>
+        <% end %>
+
+    </div>
+  </div>
+  <% end %>
+<% end %>
