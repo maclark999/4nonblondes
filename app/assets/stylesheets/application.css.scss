@@ -265,3 +265,38 @@ h1{
 //   position: relative;
 //   float: right;
 // }
+
+//////////show page////////
+
+.big-box-show {
+  // padding: 20px;
+  position: relative;
+  background: #000000;
+  margin: 2.3%;
+  height: 15em;
+  z-index: 1;
+  bottom: 0;
+  -moz-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.img-adj-show{
+  height: 15em;
+  width: auto;
+
+  filter: blur(10px);
+  // Browser Specific
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+}
+
+.small-box-txt-show {
+  position: absolute;
+  padding: 5% 7% 7% 7%;
+  // margin: 3px;
+  z-index: 4;
+  height: 10px !important
+}

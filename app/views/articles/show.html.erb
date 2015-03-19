@@ -1,8 +1,34 @@
+<div class="art-hero">
+
+  <!-- <div class="grid">
+  <%# image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
+  </div> -->
+
+  <div class="grid">
+  <div class="col-2-12 center">
+      <% if current_user %>
+      <%= link_to 'Logout', signout_path, class: 'btn btn-success' %>
+      <% end %>
+  </div>
+  </div>
+</div>
+
+<div class="container">
 
 <% @nprfetcher.titles_urls(params['search_term']).map do |cat| %>
-<%= cat[:title] %><br>
-<%= cat[:url] %><br>
-<% unless cat[:img].nil? %>
-<%= image_tag(cat[:img], class: "img-responsive") %><br>
+<div class="col-3-12">
+  <div class="big-box-show">
+    <div class = 'small-box-txt-show text-center'>
+      <%= link_to cat[:title], cat[:url]  %><br>
+      <%= truncate cat[:des].html_safe, length: 200 %>
+    </div>
+    <div class = "img-box">
+      <% unless cat[:img].nil? %>
+      <%= image_tag(cat[:img], class: "img-adj-show") %><br>
+      <% end %>
+    </div>
+  </div>
+</div>
 <% end %>
-<% end %>
+
+</div>
