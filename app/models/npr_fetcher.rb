@@ -49,9 +49,11 @@ class NprFetcher
   end
   end
   end
+  end
 
 
   def title_url(searchterm)
+    Rails.cache.fetch("reposnpr/#{searchterm}", expires_in:1.hours) do
     @new = NprFetcher.new
     @search = @new.npr_news(searchterm)
     unless @search.nil?
@@ -73,6 +75,7 @@ class NprFetcher
             }
 
         end
+      end
       end
     end
 
