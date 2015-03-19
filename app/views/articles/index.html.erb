@@ -2,21 +2,14 @@
 
   <div class="grid">
   <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
-  </div>
 
-  <div class="grid">
-  <div class="col-2-12 center">
-      <% unless current_user %>
-      <%= link_to 'Login with Twitter', '/auth/twitter', class: 'btn btn-success art-logo' %>
-      <% else %>
-      <h1> Welcome <%= current_user.name %> ! </h1>
-      <%= link_to 'Logout', signout_path, class: 'btn btn-success' %>
+      <% if current_user %>
+      <!-- <h1> Welcome <%= current_user.name %> ! </h1> -->
+      <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
       <% end %>
-    </div>
 </div>
 
 </div>
-
 <div class="container">
 
 <%# @tfetcher.human.each do |tweet| %>
@@ -24,14 +17,13 @@
   <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
     <div class="col-4-12">
       <div class="big-box">
-
-        <p class="hashtag"><%= "#{tweet[:tag]}" %></p>
+        <p class="hashtag"><%= image_tag "twitter-icon.png", class:"twit" %> <%= "#{tweet[:tag]}" %></p>
 
         <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
 
         <div class="small-img-box">
           <% unless @cat[:img].nil? %>
-            <%= image_tag(@cat[:img], class: "img-sm-adj") %>
+            <%= link_to image_tag(@cat[:img], class: "img-sm-adj"), @cat[:url] %>
           <% end %>
         </div>
 
@@ -48,7 +40,7 @@
 
         <div class="img-box">
           <% unless @cat[:img].nil? %>
-            <%= image_tag(@cat[:img], class: "img-adj") %>
+            <%= link_to image_tag(@cat[:img], class: "img-adj"), @cat[:url] %>
           <% end %>
         </div>
 
@@ -56,11 +48,18 @@
     </div>
   <% end %>
 <% end %>
-
-  <%# @tfetcher.client.trends(23424977).each do |trend| %>
-  <%# trend[:name] %>
-  <%# end %>
-  <%# end %>
-
-
 </div>
+
+
+<footer>
+  <div class="container">
+    <hr>
+    <ul>
+
+    <div class="col-2-12">
+      <%= image_tag "whats-going-on.png", class:"foot-logo", alt:"Whats Going on?!" %>
+    </div>
+      <li class="col-2.5-12 f-right">&copy; <%= Time.now.year %> What's going on?!</li>
+    </ul>
+  </div>
+</footer>
