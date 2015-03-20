@@ -1,24 +1,16 @@
-<h1 class= "header" >
-  <div class = "header-tweet">
-    <%= params['tag'] %><br>
-    <% if current_user %>
-        <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout'%>
-    <% end %>
-  </div>
-</h1>
+<div class="art-hero">
 
+  <div class="grid">
+  <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
 
-<!-- <div class="art-hero">
-
-<div class="grid">
-  <%# image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
-  </div> -->
-
-  <!-- <div class="grid"> -->
-
-  <!-- </div>  -->
-<!-- </div> -->
-
+      <% if current_user %>
+      <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
+      <% end %>
+      <p class="tag">
+        <%= image_tag "twitter-icon.png", class:"twit" %> <%= params['tag'] %>
+      </p>
+    </div>
+</div>
 
 <div class="container">
 
@@ -39,3 +31,15 @@
 <% end %>
 
 </div>
+
+<footer>
+  <div class="container">
+    <hr>
+    <ul>
+    <div class="col-2-12">
+      <%= image_tag "whats-going-on.png", class:"foot-logo", alt:"Whats Going on?!" %>
+    </div>
+      <li class="col-2.5-12 f-right">&copy; <%= Time.now.year %> What's going on?!</li>
+    </ul>
+  </div>
+</footer>
