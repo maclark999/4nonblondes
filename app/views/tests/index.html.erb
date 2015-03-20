@@ -82,36 +82,3 @@
     </div>
   </div>
 </div>
-
-
-<% @faketweets.each do |tweet| %>
-  <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
-  <div class="col-4-12">
-    <div class="big-box">
-
-      <p class="hashtag"><%= "#{tweet[:tag]}" %></p>
-
-      <div class="small-img-box">
-        <% unless @cat[:img].nil? %>
-          <%= image_tag(@cat[:img], class:"img-sm-adj") %>
-        <% end %>
-        </div>
-
-      <div class="small-box-txt">
-        <% @cat = @nprfetcher.title_url(tweet[:search_term])%>
-        <h1><%= @cat[:title] %></h1>
-        <p class="tbox"><%= @cat[:url] %></p>
-        <p class="more"><%= link_to "Click for more articles", article_path(tweet: tweet) %></p>
-      </div>
-
-      <div class="small-box"></div>
-
-      <div class="img-box">
-        <% unless @cat[:img].nil? %>
-          <%= image_tag(@cat[:img], class:"img-adj") %>
-        <% end %>
-
-    </div>
-  </div>
-  <% end %>
-<% end %>

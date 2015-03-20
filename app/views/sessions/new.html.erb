@@ -1,15 +1,13 @@
 <body class="b">
+  <div class="container">
 
-<div class="container">
-
-  <%= image_tag "whats-going-on.png", class:"login-logo", alt:"Whats Going on?!" %>
-    <div class="col-2-12 center">
-      <div class="button">
-      <% unless current_user %>
-      <%= link_to 'Login with Twitter', '/auth/twitter', class: 'btn btn-success hlogo' %>
-      <% end %>
-    </div>
-    </div>
-
-</div>
+    <div class="grid-session">
+      <%= image_tag "whats-going-on.png", class:"login-logo", alt:"Whats Going on?!" %>
+        <% unless current_user %>
+          <%= link_to '/auth/twitter', class:'btn btn-success session-login'  do %>
+             <%= image_tag('twitter-icon.png', class:"twit-sesh") %> Login
+          <% end %>
+        <% end %>
+      </div>
+  </div>
 </body>
