@@ -37,7 +37,7 @@ class NprFetcher
       end
 
       if img_val.nil?
-        img_val = '4non-back.jpg'
+        img_val = '4non-default.jpg'
       end
 
       if child["teaser"].present?
