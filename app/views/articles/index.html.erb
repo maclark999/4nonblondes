@@ -33,7 +33,7 @@
 </div>
 <div class="container">
 
-<% @tfetcher.human(@woeid).each do |tweet| %>
+<% @tfetcher.human(@woeid)[0..8].each do |tweet| %>
 <%# @faketweets.each do |tweet| %>
   <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
     <div class="col-4-12">

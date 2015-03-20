@@ -36,6 +36,10 @@ class NprFetcher
         img_val = BingFetcher.new.image_search(child['title']['$text'])
       end
 
+      if img_val.nil?
+        img_val = '4non-back.jpg'
+      end
+
       if child["teaser"].present?
         teaser_val = child["teaser"]["$text"]
       end
