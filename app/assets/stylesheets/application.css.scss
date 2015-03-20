@@ -55,7 +55,7 @@ body.b {
 }
 
 .art-logout{
-    margin: 2% 0 0 44%;
+    margin: 2% 0 -2% 44%;
     display: block;
     width: 10em;
 }
@@ -421,4 +421,12 @@ hr{
   width: 100%;
   text-align: center;
   padding: 6% 0 0 0;
+}
+
+.tag a.active{
+    color: #019871;
+}
+
+.color{
+  color: #ffffff;
 }

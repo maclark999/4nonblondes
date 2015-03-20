@@ -4,13 +4,30 @@
   <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
 
       <% if current_user %>
-      <!-- <h1> Welcome <%= current_user.name %> ! </h1> -->
       <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
       <% end %>
 
-      <%= link_to 'World', '/articles?param=1' %>
-      <%= link_to 'United States', '/articles?param=23424977' %>
-      <%= link_to 'Denver, CO', '/articles?param=2391279' %>
+      <p class="tag">
+        <% if params[:param] == "1" %>
+          <%= link_to 'World', '/articles?param=1', class:"color active" %> /
+        <% else %>
+          <%= link_to 'World', '/articles?param=1', class:"color" %> /
+        <% end %>
+
+        <% if params[:param] == "23424977" %>
+          <%= link_to 'United States', '/articles?param=23424977', class:"color active" %> /
+        <% elsif params[:param] == nil %>
+          <%= link_to 'United States', '/articles?param=23424977', class:"color active" %> /
+        <% else %>
+          <%= link_to 'United States', '/articles?param=23424977', class:"color" %> /
+        <% end %>
+
+        <% if params[:param] == "2391279" %>
+          <%= link_to 'Denver, CO', '/articles?param=2391279', class:"color active" %>
+        <% else %>
+          <%= link_to 'Denver, CO', '/articles?param=2391279', class:"color" %>
+        <% end %>
+    </p>
 </div>
 
 </div>
