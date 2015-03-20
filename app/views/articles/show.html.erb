@@ -19,7 +19,7 @@
   <div class="big-box-show">
 
     <div class="col-6-12">
-      <%= link_to cat[:title], cat[:url], class:"title-show"  %>
+      <%= link_to cat[:title], cat[:url], class:"title-show", :target => "_blank"  %>
       <div class = "img-box">
         <% unless cat[:img].nil? %>
         <%= image_tag(cat[:img], class: "img-adj-show") %>
