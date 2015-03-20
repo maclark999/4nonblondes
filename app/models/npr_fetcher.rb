@@ -70,6 +70,10 @@ class NprFetcher
           img_val = BingFetcher.new.image_search(@search['list']['story'][0]['title']['$text'])
         end
 
+        if img_val.nil?
+          img_val = "4non-back.jpg"
+        end
+
         if @search['list']['story'][0]["teaser"].present?
           teaser_val = @search['list']['story'][0]["teaser"]["$text"]
         end
