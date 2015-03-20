@@ -15,17 +15,25 @@
 <div class="container">
 
 <% @nprfetcher.titles_urls(params['search_term']).map do |cat| %>
-<div class="col-3-12">
+<div class="col-6-12">
   <div class="big-box-show">
-    <div class = 'small-box-txt-show text-center'>
-      <%= link_to cat[:title], cat[:url]  %><br>
-      <%= truncate cat[:des].html_safe, length: 200 %>
+
+    <div class="col-6-12">
+      <%= link_to cat[:title], cat[:url], class:"title-show"  %>
+      <div class = "img-box">
+        <% unless cat[:img].nil? %>
+        <%= image_tag(cat[:img], class: "img-adj-show") %>
+        <% end %>
+      </div>
     </div>
-    <div class = "img-box">
-      <% unless cat[:img].nil? %>
-      <%= image_tag(cat[:img], class: "img-adj-show") %><br>
-      <% end %>
+
+    <div class="col-6-12">
+      <div class = 'show-small-box-txt'>
+        <%= truncate cat[:des].html_safe, length: 200 %>
+      </div>
+      <div class="show-small-box"></div>
     </div>
+
   </div>
 </div>
 <% end %>
