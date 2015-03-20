@@ -7,13 +7,16 @@
       <!-- <h1> Welcome <%= current_user.name %> ! </h1> -->
       <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
       <% end %>
+
+      <%= link_to 'United States', '/articles?param=23424977' %>
+      <%= link_to 'Denver, CO', '/articles?param=2391279' %>
 </div>
 
 </div>
 <div class="container">
 
-<%# @tfetcher.human.each do |tweet| %>
-<% @faketweets.each do |tweet| %>
+<% @tfetcher.human(@woeid).each do |tweet| %>
+<%# @faketweets.each do |tweet| %>
   <% unless @nprfetcher.title_url(tweet[:search_term]).nil? %>
     <div class="col-4-12">
       <div class="big-box">

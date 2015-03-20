@@ -11,15 +11,17 @@ class TwitterFetcher
     end
   end
 
-  def trends(id=23424977, options={})
+  def trends(id, options={})
     options[:id] = id
     response = get("/1.1/trends/place.json", options)
     collection_from_array(Twitter::Trend, response[:body].first[:trends])
   end
 
-  def human
-    @client.trends(23424977).map do |trend|
+  def human(woeid)
+    Rails.cache.fetch("twittertrends/#{woeid}", expires_in:5.minutes) do
+    @client.trends(woeid).map do |trend|
       {tag: trend[:name], search_term: trend[:name].underscore.humanize.gsub("#", "") }
+    end
     end
   end
 

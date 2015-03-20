@@ -25,8 +25,13 @@ class NprFetcher
       unless @search['list']['story'].nil?
       @search['list']['story'][0..9].map do |child|
 
+
       if child['thumbnail'].present?
-        img_val = child['thumbnail']['large']['$text']
+        if child['thumbnail']['large'].present?
+          img_val = child['thumbnail']['large']['$text']
+        else
+          img_val = BingFetcher.new.image_search(child['title']['$text'])
+        end
       else
         img_val = BingFetcher.new.image_search(child['title']['$text'])
       end

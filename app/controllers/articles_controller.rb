@@ -5,6 +5,11 @@ class ArticlesController < ApplicationController
   def index
     @nprfetcher = NprFetcher.new
     @tfetcher = TwitterFetcher.new
+  if params[:param].nil?
+    @woeid = 23424977
+  else
+    @woeid = params[:param]
+  end
     @faketweets = [{:tag=>"#WhatDoesHappinessMean", :search_term=>"what does happiness mean"},
       {:tag=>"#DitchYourDateIn5Words", :search_term=>"ditch your date in5 words"},
       {:tag=>"#NBABands", :search_term=>"nba bands"},
