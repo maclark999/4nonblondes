@@ -14,7 +14,7 @@ class TwitterFetcher
   def trends(id, options={})
     options[:id] = id
     response = get("/1.1/trends/place.json", options)
-    collection_from_array(Twitter::Trend, response[:body].first[:trends])
+    collection_from_array(Twitter::Trend, response[:body].first[:trends])[0..8]
   end
 
   def human(woeid)
