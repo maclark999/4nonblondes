@@ -75,7 +75,7 @@ class NprFetcher
         end
 
         if img_val.nil?
-          img_val = "4non-back.jpg"
+          img_val = "4non-default.jpg"
         end
 
         if @search['list']['story'][0]["teaser"].present?
