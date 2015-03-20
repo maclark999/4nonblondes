@@ -44,7 +44,7 @@
 
         <div class="small-img-box">
           <% unless @cat[:img].nil? %>
-            <%= link_to image_tag(@cat[:img], class: "img-sm-adj"), @cat[:url] %>
+            <%= link_to image_tag(@cat[:img], class: "img-sm-adj"), @cat[:url], :target => "_blank" %>
           <% end %>
         </div>
 

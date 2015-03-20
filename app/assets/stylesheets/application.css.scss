@@ -308,11 +308,12 @@ h1{
   font-size: 1.7em;
   position: absolute;
   // margin: 43% 26% 0 26%;
-  padding: 5% 5% 5% 5%;
+  padding: 3% 5% 5% 5%;
   height: 100%;
   width: 50%;
   overflow: hidden;
   z-index: 3;
+  line-height: 1.3em;
 }
 
 .button {
@@ -429,4 +430,56 @@ hr{
 
 .color{
   color: #ffffff;
+}
+
+@media screen and (max-width: 1000px) {
+  .col-4-12 {
+    width: 50%;
+  }
+  .col-6-12 {
+    width: 100%;
+  }
+  .show-small-box-txt {
+    position: absolute;
+    bottom: 0;
+    padding: 5% 5% 5% 5%;
+    margin: 0 0 0 50%;
+    color: #000000;
+    height: 100%;
+    width: 50%;
+    z-index: 5;
+
+  }
+  .show-small-box {
+    background-image: image-url("groovepaper_gray.jpg");
+
+    position: absolute;
+    bottom: 0;
+    padding: 5% 5% 5% 5%;
+    margin: 0 0 0 50%;
+    z-index: 4;
+  }
+  .title-show{
+    font-size: 1.5em;
+  }
+  .tag{
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .col-4-12 {
+    width: 100%;
+  }
+  .tag{
+    font-size: 1.7em;
+
+  }
+  .art-logout{
+      margin: 2% 0 -2% 33%;
+  }
+  .big-box{
+    max-width: 400px;
+    margin: 6px auto;
+  }
 }
