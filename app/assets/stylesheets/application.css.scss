@@ -133,6 +133,10 @@ h1{
   width: 41.6%;
 }
 
+.col-6-12 {
+  width: 50%;
+}
+
 .col-7-12 {
   width: 58.3%;
 }
@@ -298,6 +302,19 @@ h1{
   color: #000000;
 }
 
+.title-show{
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.7em;
+  position: absolute;
+  // margin: 43% 26% 0 26%;
+  padding: 5% 5% 5% 5%;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  z-index: 3;
+}
+
 .button {
   align: center;
 }
@@ -342,22 +359,23 @@ li {
 }
 
 .big-box-show {
-  // padding: 20px;
   position: relative;
-  background: #000000;
+  background-image: image-url("stormysky2.jpg");
+
+  // background: #000000;
   margin: 2.3%;
   height: 15em;
   z-index: 1;
   bottom: 0;
-  -moz-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
-  -webkit-box-shadow:0px 0px 10px rgba(0,0,0,0.5);
-  box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 29px -3px #000000;
+  -webkit-box-shadow: 0px 0px 29px -3px #000000;
+  -moz-box-shadow: 0px 0px 29px -3px #000000;
+  -o-box-shadow: 0px 0px 29px -3px #000000;
 }
 
 .img-adj-show{
   height: 15em;
   width: auto;
-
   filter: blur(10px);
   // Browser Specific
   -webkit-filter: blur(10px);
@@ -366,30 +384,29 @@ li {
   -ms-filter: blur(10px);
 }
 
-.small-box-txt-show {
+.show-small-box {
   position: absolute;
-  padding: 5% 7% 7% 7%;
-  // margin: 3px;
-  z-index: 4;
-  height: 10px !important
+  padding: 0 0 0 7%;
+  background-image: image-url("groovepaper_gray.jpg");
+  opacity: .7;
+  height: 100%;
+  width: 50%;
+  z-index: 3;
 }
-//
-// .grid-show {
-//   margin: 0 auto;
-//   padding: 5% 0 5% 0;
-// }
-//
-// #button-show{
-//   top: 50px;
-//   border-radius: 0px;
-//   margin: 0 auto;}
-//
-// .header-tweet{
-//   // margin: 0 auto;
-//   text-align: center;
-//   padding-top: 20px;
-//   // left: 50%;
-//   // margin-left: -500px;
+
+.show-small-box-txt {
+  position: absolute;
+  bottom: 0;
+  padding: 5% 5% 5% 5%;
+  color: #000000;
+  height: 100%;
+  width: 50%;
+  z-index: 4;
+  -moz-box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+  box-shadow:0px 0px 5px rgba(0,0,0,0.3);
+}
+
 hr{
   opacity: .75;
 

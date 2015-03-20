@@ -1,41 +1,53 @@
-<h1 class= "header" >
-  <div class = "header-tweet">
-    <%= params['tag'] %><br>
-    <% if current_user %>
-        <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout'%>
-    <% end %>
-  </div>
-</h1>
+<div class="art-hero">
 
+  <div class="grid">
+  <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
 
-<!-- <div class="art-hero">
-
-<div class="grid">
-  <%# image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
-  </div> -->
-
-  <!-- <div class="grid"> -->
-
-  <!-- </div>  -->
-<!-- </div> -->
-
+      <% if current_user %>
+      <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
+      <% end %>
+      <p class="tag">
+        <%= image_tag "twitter-icon.png", class:"twit" %> <%= params['tag'] %>
+      </p>
+    </div>
+</div>
 
 <div class="container">
 
 <% @nprfetcher.titles_urls(params['search_term']).map do |cat| %>
-<div class="col-3-12">
+<div class="col-6-12">
   <div class="big-box-show">
-    <div class = 'small-box-txt-show text-center'>
-      <%= link_to cat[:title], cat[:url]  %><br>
-      <%= truncate cat[:des].html_safe, length: 200 %>
+
+    <div class="col-6-12">
+      <%= link_to cat[:title], cat[:url], class:"title-show", :target => "_blank"  %>
+      <div class = "img-box">
+        <% unless cat[:img].nil? %>
+        <%= image_tag(cat[:img], class: "img-adj-show") %>
+        <% end %>
+      </div>
     </div>
-    <div class = "img-box">
-      <% unless cat[:img].nil? %>
-      <%= image_tag(cat[:img], class: "img-adj-show") %><br>
-      <% end %>
+
+    <div class="col-6-12">
+      <div class = 'show-small-box-txt'>
+        <%= truncate cat[:des].html_safe, length: 200 %>
+      </div>
+      <div class="show-small-box"></div>
     </div>
+
   </div>
 </div>
 <% end %>
 
 </div>
+
+<footer>
+  <div class="container">
+    <hr>
+    <ul>
+    <div class="col-2-12">
+      <%= image_tag "whats-going-on.png", class:"foot-logo", alt:"Whats Going on?!" %>
+    </div>
+      <li class="col-2.5-12 f-right">&copy; <%= Time.now.year %> WHAT'S GOING ON?!</li>
+    </ul>
+  </div>
+</footer>
