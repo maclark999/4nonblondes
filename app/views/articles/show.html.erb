@@ -1,7 +1,7 @@
 <div class="art-hero">
 
   <div class="grid">
-  <%= image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!" %>
+  <%= link_to (image_tag "whats-going-on.png", class:"art-logo", alt:"Whats Going on?!"), articles_path %>
 
       <% if current_user %>
       <%= link_to 'Logout', signout_path, class: 'btn btn-success art-logout' %>
