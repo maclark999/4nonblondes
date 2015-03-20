@@ -6,8 +6,14 @@ class ApplicationController < ActionController::Base
   def current_user
      @current_user ||= User.find_by(uid: session[:user_id])
   end
-
-
   helper_method :current_user
+
+
+  def authenticate
+    unless current_user
+      redirect_to root_path
+    end
+  end
+
 
 end

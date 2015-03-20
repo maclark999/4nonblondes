@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  before_filter :authenticate
+
   def index
     @nprfetcher = NprFetcher.new
     @tfetcher = TwitterFetcher.new
